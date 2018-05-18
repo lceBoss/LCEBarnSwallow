@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5138A20AD24AE002F4940 /* AppDelegate.swift */; };
-		C3F5138D20AD24AE002F4940 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5138C20AD24AE002F4940 /* ViewController.swift */; };
-		C3F5139020AD24AE002F4940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F5138E20AD24AE002F4940 /* Main.storyboard */; };
 		C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F5139120AD24B1002F4940 /* Assets.xcassets */; };
-		C3F5139520AD24B1002F4940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F5139320AD24B1002F4940 /* LaunchScreen.storyboard */; };
 		C3F513A020AD24B1002F4940 /* LCEBarnSwallowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5139F20AD24B1002F4940 /* LCEBarnSwallowTests.swift */; };
 		C3F513AB20AD24B1002F4940 /* LCEBarnSwallowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F513AA20AD24B1002F4940 /* LCEBarnSwallowUITests.swift */; };
+		C3F513BA20AD2D42002F4940 /* LCETabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F513B920AD2D42002F4940 /* LCETabBarController.swift */; };
+		C3F513BD20AD2D9E002F4940 /* LCEBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F513BC20AD2D9E002F4940 /* LCEBaseViewController.swift */; };
+		C3F513BF20AD2DEB002F4940 /* LCEHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F513BE20AD2DEB002F4940 /* LCEHomeViewController.swift */; };
+		C3F513C220AD4DA7002F4940 /* LCEColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F513C120AD4DA7002F4940 /* LCEColorHex.swift */; };
+		C3F513C620AD523A002F4940 /* LCEMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F513C520AD523A002F4940 /* LCEMeViewController.swift */; };
+		C3F513CC20AD71E8002F4940 /* LCENavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F513CB20AD71E8002F4940 /* LCENavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +39,7 @@
 /* Begin PBXFileReference section */
 		C3F5138720AD24AE002F4940 /* LCEBarnSwallow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCEBarnSwallow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F5138A20AD24AE002F4940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3F5138C20AD24AE002F4940 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C3F5138F20AD24AE002F4940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3F5139120AD24B1002F4940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C3F5139420AD24B1002F4940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3F5139620AD24B1002F4940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3F5139B20AD24B1002F4940 /* LCEBarnSwallowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCEBarnSwallowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F5139F20AD24B1002F4940 /* LCEBarnSwallowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEBarnSwallowTests.swift; sourceTree = "<group>"; };
@@ -47,6 +47,12 @@
 		C3F513A620AD24B1002F4940 /* LCEBarnSwallowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCEBarnSwallowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F513AA20AD24B1002F4940 /* LCEBarnSwallowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEBarnSwallowUITests.swift; sourceTree = "<group>"; };
 		C3F513AC20AD24B1002F4940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3F513B920AD2D42002F4940 /* LCETabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCETabBarController.swift; sourceTree = "<group>"; };
+		C3F513BC20AD2D9E002F4940 /* LCEBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEBaseViewController.swift; sourceTree = "<group>"; };
+		C3F513BE20AD2DEB002F4940 /* LCEHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEHomeViewController.swift; sourceTree = "<group>"; };
+		C3F513C120AD4DA7002F4940 /* LCEColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEColorHex.swift; sourceTree = "<group>"; };
+		C3F513C520AD523A002F4940 /* LCEMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEMeViewController.swift; sourceTree = "<group>"; };
+		C3F513CB20AD71E8002F4940 /* LCENavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCENavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				C3F5138A20AD24AE002F4940 /* AppDelegate.swift */,
-				C3F5138C20AD24AE002F4940 /* ViewController.swift */,
-				C3F5138E20AD24AE002F4940 /* Main.storyboard */,
+				C3F513B820AD2CF6002F4940 /* LCEBase */,
+				C3F513BB20AD2D51002F4940 /* LCEControllers */,
+				C3F513C020AD4D65002F4940 /* LCEUtils */,
 				C3F5139120AD24B1002F4940 /* Assets.xcassets */,
-				C3F5139320AD24B1002F4940 /* LaunchScreen.storyboard */,
 				C3F5139620AD24B1002F4940 /* Info.plist */,
 			);
 			path = LCEBarnSwallow;
@@ -123,6 +129,49 @@
 				C3F513AC20AD24B1002F4940 /* Info.plist */,
 			);
 			path = LCEBarnSwallowUITests;
+			sourceTree = "<group>";
+		};
+		C3F513B820AD2CF6002F4940 /* LCEBase */ = {
+			isa = PBXGroup;
+			children = (
+				C3F513B920AD2D42002F4940 /* LCETabBarController.swift */,
+				C3F513BC20AD2D9E002F4940 /* LCEBaseViewController.swift */,
+				C3F513CB20AD71E8002F4940 /* LCENavigationController.swift */,
+			);
+			path = LCEBase;
+			sourceTree = "<group>";
+		};
+		C3F513BB20AD2D51002F4940 /* LCEControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3F513C320AD5213002F4940 /* LCEHome */,
+				C3F513C420AD5222002F4940 /* LCEMe */,
+			);
+			path = LCEControllers;
+			sourceTree = "<group>";
+		};
+		C3F513C020AD4D65002F4940 /* LCEUtils */ = {
+			isa = PBXGroup;
+			children = (
+				C3F513C120AD4DA7002F4940 /* LCEColorHex.swift */,
+			);
+			path = LCEUtils;
+			sourceTree = "<group>";
+		};
+		C3F513C320AD5213002F4940 /* LCEHome */ = {
+			isa = PBXGroup;
+			children = (
+				C3F513BE20AD2DEB002F4940 /* LCEHomeViewController.swift */,
+			);
+			path = LCEHome;
+			sourceTree = "<group>";
+		};
+		C3F513C420AD5222002F4940 /* LCEMe */ = {
+			isa = PBXGroup;
+			children = (
+				C3F513C520AD523A002F4940 /* LCEMeViewController.swift */,
+			);
+			path = LCEMe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +236,7 @@
 		C3F5137F20AD24AE002F4940 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LCE;
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = yaohuxiaozi;
@@ -229,9 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3F5139520AD24B1002F4940 /* LaunchScreen.storyboard in Resources */,
 				C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */,
-				C3F5139020AD24AE002F4940 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3F5138D20AD24AE002F4940 /* ViewController.swift in Sources */,
+				C3F513CC20AD71E8002F4940 /* LCENavigationController.swift in Sources */,
+				C3F513BA20AD2D42002F4940 /* LCETabBarController.swift in Sources */,
+				C3F513C620AD523A002F4940 /* LCEMeViewController.swift in Sources */,
 				C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */,
+				C3F513BF20AD2DEB002F4940 /* LCEHomeViewController.swift in Sources */,
+				C3F513BD20AD2D9E002F4940 /* LCEBaseViewController.swift in Sources */,
+				C3F513C220AD4DA7002F4940 /* LCEColorHex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +344,6 @@
 			targetProxy = C3F513A720AD24B1002F4940 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C3F5138E20AD24AE002F4940 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3F5138F20AD24AE002F4940 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C3F5139320AD24B1002F4940 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3F5139420AD24B1002F4940 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C3F513AD20AD24B1002F4940 /* Debug */ = {
@@ -430,9 +464,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ECZYDYW676;
 				INFOPLIST_FILE = LCEBarnSwallow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,9 +484,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ECZYDYW676;
 				INFOPLIST_FILE = LCEBarnSwallow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

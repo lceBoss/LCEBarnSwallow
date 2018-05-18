@@ -12,10 +12,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabBarController: LCETabBarController!
+    var navi: LCENavigationController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        tabBarController = LCETabBarController()
+        navi = LCENavigationController(rootViewController: tabBarController)
+        window?.rootViewController = navi
+        
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+//        UIApplication.shared.statusBarStyle = UIStatusBarStyle.LightContent
+//        let navBar = UINavigationBar.appearance()
+//        navBar.isTranslucent = false
+//        navBar.titleTextAttributes = [NSAttributedStringKey.font : 18, NSAttributedStringKey.foregroundColor : UIColor.white]
+//        navBar.barTintColor = UIColor.orange
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -41,6 +55,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+//    window = UIWindow(frame: UIScreen.main.bounds)
+//    tabBarController = LCETabBarController()
+//    navigationController = LCENavigationController(rootViewController: tabBarController)
+//    window?.rootViewController = navigationController
+//
+//    UIApplication.shared.statusBarStyle = .lightContent
+//    let navBar = UINavigationBar.appearance()
+//    navBar.isTranslucent = false
+//    navBar.titleTextAttributes = [NSAttributedStringKey.font : 18, NSAttributedStringKey.foregroundColor : UIColor.white]
+//    navBar.barTintColor = UIColor.orange
+//    window?.makeKeyAndVisible()
+    
 
 }
 
