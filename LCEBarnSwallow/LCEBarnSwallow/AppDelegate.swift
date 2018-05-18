@@ -23,11 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navi
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-//        UIApplication.shared.statusBarStyle = UIStatusBarStyle.LightContent
-//        let navBar = UINavigationBar.appearance()
-//        navBar.isTranslucent = false
-//        navBar.titleTextAttributes = [NSAttributedStringKey.font : 18, NSAttributedStringKey.foregroundColor : UIColor.white]
-//        navBar.barTintColor = UIColor.orange
         window?.makeKeyAndVisible()
         
         return true

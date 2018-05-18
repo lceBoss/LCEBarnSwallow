@@ -55,6 +55,7 @@ class LCETabBarController: UITabBarController {
             itemButton.setTitleColor(defaultItemColor, for: .normal)
             itemButton.setTitleColor(selectItemColor, for: .selected)
             itemButton.setTitle(itemTitles[i], for: .normal)
+            itemButton.titleEdgeInsets = UIEdgeInsetsMake(20, 0, 0, 0)
             tabBarView.addSubview(itemButton)
             if (i == 0) {
                 itemButton.isSelected = true

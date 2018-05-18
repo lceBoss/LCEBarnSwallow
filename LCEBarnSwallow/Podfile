@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '8.0'
+use_frameworks!
+
+target 'LCEBarnSwallow' do
+	
+	pod 'MJRefresh'
+	pod 'SQLite.swift'
+    pod 'IQKeyboardManagerSwift'
+    pod 'SwiftyJSON'
+    pod 'Moya'
+    pod 'SVProgressHUD'
+
+end
+
+target 'LCEBarnSwallowTests' do
+    inherit! :search_paths
+    # Pods for testing
+end

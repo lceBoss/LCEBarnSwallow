@@ -1,0 +1,6 @@
+framework module Pods_LCEBarnSwallow {
+  umbrella header "Pods-LCEBarnSwallow-umbrella.h"
+
+  export *
+  module * { export * }
+}

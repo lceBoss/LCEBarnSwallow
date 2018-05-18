@@ -14,10 +14,40 @@ class LCEHomeViewController: LCEBaseViewController {
         super.viewDidLoad()
         
         self.title = "首页"
-
+        self.view.addSubview(testButton)
+        self.view.addSubview(dismissButton)
         // Do any additional setup after loading the view.
     }
-
+    
+    lazy var testButton: UIButton = {
+        let testButton: UIButton = UIButton.init(type: .custom)
+        testButton.frame = CGRect(x: 80, y: 100, width: 140, height: 60)
+        testButton.backgroundColor = UIColor.orange
+        testButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        testButton.setTitle("show", for: UIControlState.normal)
+        testButton.addTarget(self, action: #selector(clickTestButtonAction(_:)), for: UIControlEvents.touchUpInside)
+        return testButton
+    }()
+    
+    lazy var dismissButton: UIButton = {
+        let dismissButton: UIButton = UIButton.init(type: UIButtonType.custom)
+        dismissButton.frame = CGRect(x: 80, y: 200, width: 140, height: 60)
+        dismissButton.backgroundColor = UIColor.orange
+        dismissButton.setTitleColor(UIColor.white, for: .normal)
+        dismissButton.setTitle("消失", for: .normal)
+        dismissButton.addTarget(self, action: #selector(clickDismissButtonAction(_:)), for: .touchUpInside)
+        return dismissButton
+    }()
+    
+    @objc fileprivate func clickTestButtonAction(_ sender: UIButton) -> Void {
+        LCEProgressHUD.sharedInstance.setDefaultStyle(style: LCEProgressHUDStyle.LCEProgressHUDStyleDark)
+        LCEProgressHUD.sharedInstance.showSuccessWithStatus(status: "请求成功")
+    }
+    
+    @objc fileprivate func clickDismissButtonAction(_ sender: UIButton) -> Void {
+        LCEProgressHUD.sharedInstance.dismiss()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
