@@ -7,46 +7,57 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class LCEHomeViewController: LCEBaseViewController {
-
+class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITableViewDelegate {
+    
+//    var tableView: UITableView!
+    var dataArray:Array<JSON> = []
+    var keyword: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "首页"
-        self.view.addSubview(testButton)
-        self.view.addSubview(dismissButton)
-        // Do any additional setup after loading the view.
+        self.view.addSubview(tableView)
+        SearchImageProvider.request(.imageList(keyword: "街拍", page: 1)) {result in
+            if case let .success(response) = result {
+                let data = try? response.mapJSON()
+                let json = JSON(data!)
+                self.dataArray = json["data"].arrayValue
+                DispatchQueue.main.async{
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
     }
     
-    lazy var testButton: UIButton = {
-        let testButton: UIButton = UIButton.init(type: .custom)
-        testButton.frame = CGRect(x: 80, y: 100, width: 140, height: 60)
-        testButton.backgroundColor = UIColor.orange
-        testButton.setTitleColor(UIColor.white, for: UIControlState.normal)
-        testButton.setTitle("show", for: UIControlState.normal)
-        testButton.addTarget(self, action: #selector(clickTestButtonAction(_:)), for: UIControlEvents.touchUpInside)
-        return testButton
+    fileprivate func requestSearchImage(keyword: String, page: Int) -> Void {
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell.init()
+        let title: String = self.dataArray[indexPath.row]["title"].stringValue
+        cell.textLabel?.text = title
+        return cell
+    }
+    
+    lazy var tableView: UITableView = {
+        var tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 49))
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
     }()
-    
-    lazy var dismissButton: UIButton = {
-        let dismissButton: UIButton = UIButton.init(type: UIButtonType.custom)
-        dismissButton.frame = CGRect(x: 80, y: 200, width: 140, height: 60)
-        dismissButton.backgroundColor = UIColor.orange
-        dismissButton.setTitleColor(UIColor.white, for: .normal)
-        dismissButton.setTitle("消失", for: .normal)
-        dismissButton.addTarget(self, action: #selector(clickDismissButtonAction(_:)), for: .touchUpInside)
-        return dismissButton
-    }()
-    
-    @objc fileprivate func clickTestButtonAction(_ sender: UIButton) -> Void {
-        LCEProgressHUD.sharedInstance.setDefaultStyle(style: LCEProgressHUDStyle.LCEProgressHUDStyleDark)
-        LCEProgressHUD.sharedInstance.showSuccessWithStatus(status: "请求成功")
-    }
-    
-    @objc fileprivate func clickDismissButtonAction(_ sender: UIButton) -> Void {
-        LCEProgressHUD.sharedInstance.dismiss()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

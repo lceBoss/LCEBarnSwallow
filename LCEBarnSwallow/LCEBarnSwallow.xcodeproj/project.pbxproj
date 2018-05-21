@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3468FEACDC7AB4213C993B14 /* Pods_LCEBarnSwallow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87995BAAEAAF8621B089AC31 /* Pods_LCEBarnSwallow.framework */; };
 		AACA9836786B547925C48B10 /* Pods_LCEBarnSwallowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1C6205D85E9C4A76D0A924 /* Pods_LCEBarnSwallowTests.framework */; };
+		C38F7A3620B2ADB60089DD0D /* LCESearchImageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F7A3520B2ADB60089DD0D /* LCESearchImageApi.swift */; };
 		C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5138A20AD24AE002F4940 /* AppDelegate.swift */; };
 		C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F5139120AD24B1002F4940 /* Assets.xcassets */; };
 		C3F513A020AD24B1002F4940 /* LCEBarnSwallowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5139F20AD24B1002F4940 /* LCEBarnSwallowTests.swift */; };
@@ -47,6 +48,7 @@
 		9E1C6205D85E9C4A76D0A924 /* Pods_LCEBarnSwallowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCEBarnSwallowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6416C02E976DB4AEA217D57 /* Pods_LCEBarnSwallowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCEBarnSwallowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02A9F52D4C38072A5318446 /* Pods-LCEBarnSwallow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCEBarnSwallow.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCEBarnSwallow/Pods-LCEBarnSwallow.release.xcconfig"; sourceTree = "<group>"; };
+		C38F7A3520B2ADB60089DD0D /* LCESearchImageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCESearchImageApi.swift; sourceTree = "<group>"; };
 		C3F5138720AD24AE002F4940 /* LCEBarnSwallow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCEBarnSwallow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F5138A20AD24AE002F4940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F5139120AD24B1002F4940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C38F7A3320B2AD510089DD0D /* LCERequest */ = {
+			isa = PBXGroup;
+			children = (
+				C38F7A3520B2ADB60089DD0D /* LCESearchImageApi.swift */,
+			);
+			path = LCERequest;
+			sourceTree = "<group>";
+		};
+		C38F7A3420B2AD700089DD0D /* LCEModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LCEModel;
+			sourceTree = "<group>";
+		};
 		C3F5137E20AD24AE002F4940 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +160,8 @@
 				C3F513B820AD2CF6002F4940 /* LCEBase */,
 				C3F513CD20AE85A0002F4940 /* LCEViews */,
 				C3F513BB20AD2D51002F4940 /* LCEControllers */,
+				C38F7A3320B2AD510089DD0D /* LCERequest */,
+				C38F7A3420B2AD700089DD0D /* LCEModel */,
 				C3F513C020AD4D65002F4940 /* LCEUtils */,
 				C3F513CE20AE85D3002F4940 /* LCEVendors */,
 				C3F5139120AD24B1002F4940 /* Assets.xcassets */,
@@ -433,6 +452,7 @@
 			files = (
 				C3F513CC20AD71E8002F4940 /* LCENavigationController.swift in Sources */,
 				C3F513D020AEAE44002F4940 /* LCEProgressHUD.swift in Sources */,
+				C38F7A3620B2ADB60089DD0D /* LCESearchImageApi.swift in Sources */,
 				C3F513BA20AD2D42002F4940 /* LCETabBarController.swift in Sources */,
 				C3F513C620AD523A002F4940 /* LCEMeViewController.swift in Sources */,
 				C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */,

@@ -15,6 +15,7 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire
   - IQKeyboardManagerSwift
   - MJRefresh
   - Moya
@@ -43,6 +44,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ac7ebc201eb03f2bff02122e7a51b3d7a3886816
+PODFILE CHECKSUM: 744c56bdcdff14c4f0f5b1d97e8d5d2b17af402a
 
 COCOAPODS: 1.5.2

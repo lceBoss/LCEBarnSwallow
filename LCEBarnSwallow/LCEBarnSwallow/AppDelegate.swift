@@ -50,19 +50,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    
-//    window = UIWindow(frame: UIScreen.main.bounds)
-//    tabBarController = LCETabBarController()
-//    navigationController = LCENavigationController(rootViewController: tabBarController)
-//    window?.rootViewController = navigationController
-//
-//    UIApplication.shared.statusBarStyle = .lightContent
-//    let navBar = UINavigationBar.appearance()
-//    navBar.isTranslucent = false
-//    navBar.titleTextAttributes = [NSAttributedStringKey.font : 18, NSAttributedStringKey.foregroundColor : UIColor.white]
-//    navBar.barTintColor = UIColor.orange
-//    window?.makeKeyAndVisible()
-    
-
 }
 
