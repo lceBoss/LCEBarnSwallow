@@ -6,9 +6,10 @@ inhibit_all_warnings!
 target 'LCEBarnSwallow' do
 	
 	pod 'MJRefresh'
-	pod 'SQLite.swift'
+#    pod 'SQLite.swift'
     pod 'IQKeyboardManagerSwift'
     pod 'Moya'
+    pod 'SnapKit', '~> 4.0.0'
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'SVProgressHUD'

@@ -19,6 +19,7 @@ class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         self.title = "首页"
+        self.naviView.title = "首页"
         self.view.addSubview(tableView)
         SearchImageProvider.request(.imageList(keyword: "街拍", page: 1)) {result in
             if case let .success(response) = result {
@@ -64,15 +65,5 @@ class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITab
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

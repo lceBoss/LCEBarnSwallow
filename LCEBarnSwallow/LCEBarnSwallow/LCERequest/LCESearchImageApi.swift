@@ -57,7 +57,7 @@ extension SearchImage: TargetType {
     
     
     public var headers: [String: String]? {
-        return ["xiaobei": "python"]
+        return ["Authorization": "Basic eGlhb2JlaTpweXRob24="]
     }
     
     

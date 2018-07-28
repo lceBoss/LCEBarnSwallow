@@ -9,19 +9,38 @@
 import UIKit
 
 class LCEMeViewController: LCEBaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "我的"
-        // Do any additional setup after loading the view.
+        self.naviView.title = "我的"
+        self.view .addSubview(self.writeButton)
     }
+    
+    // 点击写日记按钮
+    @objc func touchWriteDiaryButton(sender:UIButton) -> Void {
+        let writeDiaryVC = LCEWriteDiaryViewController()
+        self.navigationController!.pushViewController(writeDiaryVC, animated: true)
+    }
+    
+    // 懒加载
+    lazy var writeButton : UIButton = {
+        let writeButton = UIButton()
+        writeButton.setTitle("写日记", for: UIControlState.normal)
+        writeButton.setTitleColor(UIColor.lightGray, for: UIControlState.highlighted)
+        writeButton.frame = CGRect(x: 0, y: 0, width: 150, height: 44)
+        writeButton.backgroundColor = UIColor.orange
+        writeButton.center = self.view.center
+        writeButton.layer.cornerRadius = 10
+        writeButton.addTarget(self, action: #selector(touchWriteDiaryButton(sender:)), for: UIControlEvents.touchUpInside)
+        return writeButton
+    }()
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
