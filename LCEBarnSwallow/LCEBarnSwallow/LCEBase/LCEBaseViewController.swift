@@ -8,11 +8,17 @@
 
 import UIKit
 
+// 默认背景灰色
+let lceBgColor : UIColor = UIColor(red: 242 / 255.0, green: 242 / 255.0, blue: 242 / 255.0, alpha: 1.0)
+// 屏幕宽
+let lce_screen_width : CGFloat = UIScreen.main.applicationFrame.size.width
+// 屏幕高
+let lce_screen_height : CGFloat = UIScreen.main.applicationFrame.size.height
+
 class LCEBaseViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = lceBgColor
         view.translatesAutoresizingMaskIntoConstraints = true
         automaticallyAdjustsScrollViewInsets = false
         if (self.navigationController?.viewControllers.count) != nil {

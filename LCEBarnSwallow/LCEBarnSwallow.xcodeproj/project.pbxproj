@@ -13,6 +13,13 @@
 		C39950CB20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39950CA20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift */; };
 		C39950CE20F9D30C00BC0BDB /* LCENaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39950CD20F9D30C00BC0BDB /* LCENaviView.swift */; };
 		C39950D020F9E43300BC0BDB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39950CF20F9E43300BC0BDB /* SnapKit.framework */; };
+		C3A9FB10210F16DF004926BB /* LCEChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB0F210F16DF004926BB /* LCEChooseDateViewController.swift */; };
+		C3A9FB12210F1986004926BB /* LCEChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB11210F1986004926BB /* LCEChooseIconViewController.swift */; };
+		C3A9FB14210F1AA8004926BB /* LCEChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB13210F1AA8004926BB /* LCEChoosePhotoViewController.swift */; };
+		C3A9FB16210F1B20004926BB /* LCERecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB15210F1B20004926BB /* LCERecordViewController.swift */; };
+		C3D29A5721216EDB00B3B172 /* LCEChooseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D29A5621216EDB00B3B172 /* LCEChooseDateView.swift */; };
+		C3D29A5821216EDB00B3B172 /* LCEChooseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D29A5621216EDB00B3B172 /* LCEChooseDateView.swift */; };
+		C3D29A5921216EDB00B3B172 /* LCEChooseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D29A5621216EDB00B3B172 /* LCEChooseDateView.swift */; };
 		C3DDF45F20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */; };
 		C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5138A20AD24AE002F4940 /* AppDelegate.swift */; };
 		C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F5139120AD24B1002F4940 /* Assets.xcassets */; };
@@ -56,6 +63,11 @@
 		C39950CA20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEWriteDiaryViewController.swift; sourceTree = "<group>"; };
 		C39950CD20F9D30C00BC0BDB /* LCENaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCENaviView.swift; sourceTree = "<group>"; };
 		C39950CF20F9E43300BC0BDB /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3A9FB0F210F16DF004926BB /* LCEChooseDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseDateViewController.swift; sourceTree = "<group>"; };
+		C3A9FB11210F1986004926BB /* LCEChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseIconViewController.swift; sourceTree = "<group>"; };
+		C3A9FB13210F1AA8004926BB /* LCEChoosePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChoosePhotoViewController.swift; sourceTree = "<group>"; };
+		C3A9FB15210F1B20004926BB /* LCERecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCERecordViewController.swift; sourceTree = "<group>"; };
+		C3D29A5621216EDB00B3B172 /* LCEChooseDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseDateView.swift; sourceTree = "<group>"; };
 		C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEWriteDiaryFunctionBarView.swift; sourceTree = "<group>"; };
 		C3F5138720AD24AE002F4940 /* LCEBarnSwallow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCEBarnSwallow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F5138A20AD24AE002F4940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */,
+				C3D29A5621216EDB00B3B172 /* LCEChooseDateView.swift */,
 			);
 			path = LCEWriteDiaryView;
 			sourceTree = "<group>";
@@ -255,6 +268,10 @@
 			children = (
 				C3F513C520AD523A002F4940 /* LCEMeViewController.swift */,
 				C39950CA20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift */,
+				C3A9FB0F210F16DF004926BB /* LCEChooseDateViewController.swift */,
+				C3A9FB11210F1986004926BB /* LCEChooseIconViewController.swift */,
+				C3A9FB13210F1AA8004926BB /* LCEChoosePhotoViewController.swift */,
+				C3A9FB15210F1B20004926BB /* LCERecordViewController.swift */,
 			);
 			path = LCEMe;
 			sourceTree = "<group>";
@@ -484,11 +501,16 @@
 				C38F7A3620B2ADB60089DD0D /* LCESearchImageApi.swift in Sources */,
 				C39950CB20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift in Sources */,
 				C3F513BA20AD2D42002F4940 /* LCETabBarController.swift in Sources */,
+				C3A9FB10210F16DF004926BB /* LCEChooseDateViewController.swift in Sources */,
+				C3D29A5721216EDB00B3B172 /* LCEChooseDateView.swift in Sources */,
 				C3F513C620AD523A002F4940 /* LCEMeViewController.swift in Sources */,
 				C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */,
 				C3F513BF20AD2DEB002F4940 /* LCEHomeViewController.swift in Sources */,
+				C3A9FB14210F1AA8004926BB /* LCEChoosePhotoViewController.swift in Sources */,
+				C3A9FB16210F1B20004926BB /* LCERecordViewController.swift in Sources */,
 				C3F513BD20AD2D9E002F4940 /* LCEBaseViewController.swift in Sources */,
 				C3F513C220AD4DA7002F4940 /* LCEColorHex.swift in Sources */,
+				C3A9FB12210F1986004926BB /* LCEChooseIconViewController.swift in Sources */,
 				C39950CE20F9D30C00BC0BDB /* LCENaviView.swift in Sources */,
 				C3DDF45F20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift in Sources */,
 			);
@@ -498,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D29A5821216EDB00B3B172 /* LCEChooseDateView.swift in Sources */,
 				C3F513A020AD24B1002F4940 /* LCEBarnSwallowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D29A5921216EDB00B3B172 /* LCEChooseDateView.swift in Sources */,
 				C3F513AB20AD24B1002F4940 /* LCEBarnSwallowUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

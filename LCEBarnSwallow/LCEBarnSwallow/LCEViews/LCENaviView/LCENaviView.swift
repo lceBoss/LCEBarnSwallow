@@ -9,9 +9,6 @@
 import UIKit
 import SnapKit
 
-let lce_screen_width : CGFloat = UIScreen.main.applicationFrame.size.width
-let lce_screen_height : CGFloat = UIScreen.main.applicationFrame.size.height
-
 class LCENaviView: UIView {
     
     open var title: String? {
