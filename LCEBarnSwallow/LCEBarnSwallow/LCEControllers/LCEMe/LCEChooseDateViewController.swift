@@ -8,8 +8,23 @@
 
 import UIKit
 
-class LCEChooseDateViewController: LCEBaseViewController {
+typealias LCEChooseDateViewControllerBlock = (_ dateTimeStr: String) -> Void
 
+class LCEChooseDateViewController: LCEBaseViewController, LCEChooseDateViewDelegate {
+    
+    var chooseDateBlock: LCEChooseDateViewControllerBlock?
+    
+    open var dateTimeStr: String! {
+        didSet{
+            self.timeLabel.text = dateTimeStr
+        }
+    }
+    
+    // 选择时间代理方法
+    func chooseDateAndTime(dateTime: String) {
+        self.timeLabel.text = dateTime
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.naviView.title = "日期和时间"
@@ -24,10 +39,18 @@ class LCEChooseDateViewController: LCEBaseViewController {
     @objc override func leftBarButtonItemAction() -> Void {
         self.dismiss(animated: true, completion: nil)
     }
-    @objc func rightBarButtonItemAction() -> Void {}
+    @objc func rightBarButtonItemAction() -> Void {
+        if chooseDateBlock != nil {
+            chooseDateBlock!(self.timeLabel.text!)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func callBackBlock(_ block: @escaping LCEChooseDateViewControllerBlock) {
+        chooseDateBlock = block
+    }
     
     // MARK: 按钮响应方法
-    
     
     override func updateViewConstraints() {
         self.timeLabel.snp.makeConstraints { (make) in
@@ -43,12 +66,13 @@ class LCEChooseDateViewController: LCEBaseViewController {
         timeLabel.textColor = UIColor.black
         timeLabel.textAlignment = .center
         timeLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        timeLabel.text = "2018年08月13日 11:19"
         return timeLabel
     }()
     // 选择日期和时间
     lazy var chooseDateView : LCEChooseDateView = {
         let chooseDateView = LCEChooseDateView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 300, width: lce_screen_width, height: 300))
+        chooseDateView.delegate = self
+        chooseDateView.dateTimeStr = dateTimeStr
         return chooseDateView
     }()
 

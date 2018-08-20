@@ -8,7 +8,24 @@
 
 import UIKit
 
+protocol LCEChooseDateViewDelegate {
+    func chooseDateAndTime(dateTime: String) -> Void
+}
+
 class LCEChooseDateView: UIView {
+    
+    var delegate: LCEChooseDateViewDelegate?
+    open var dateTimeStr: String! {
+        didSet {
+            let dateFmatter = DateFormatter()
+            dateFmatter.dateFormat = "yyyy年MM月dd日"
+            let date = dateFmatter.date(from: String(dateTimeStr.prefix(11)))
+            dateFmatter.dateFormat = "HH:mm"
+            let time = dateFmatter.date(from: String(dateTimeStr.suffix(5)))
+            self.datePicker.setDate(date!, animated: true)
+            self.timePicker.setDate(time!, animated: true)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,6 +39,7 @@ class LCEChooseDateView: UIView {
     func setUpViews() -> Void {
         self.addSubview(self.dateAndTimeBgView)
         self.addSubview(self.datePicker)
+        self.addSubview(self.timePicker)
     }
     
     override func updateConstraints() {
@@ -45,6 +63,11 @@ class LCEChooseDateView: UIView {
             make.height.equalTo(220)
             make.bottom.equalTo(-10)
         }
+        self.timePicker.snp.makeConstraints { (make) in
+            make.left.right.equalTo(0)
+            make.height.equalTo(220)
+            make.bottom.equalTo(-10)
+        }
         
         super .updateConstraints()
     }
@@ -53,24 +76,28 @@ class LCEChooseDateView: UIView {
     @objc func touchDateButtonAction(sender: UIButton) -> Void {
         sender.isSelected = true
         self.timeButton.isSelected = false
-        self.datePicker.datePickerMode = .date
-        self.datePicker.locale = Locale(identifier: "zh_CN")
+        self.datePicker.isHidden = false
+        self.timePicker.isHidden = true
     }
     @objc func touchTimeButtonAction(sender: UIButton) -> Void {
         sender.isSelected = true
         self.dateButton.isSelected = false
-        self.datePicker.datePickerMode = .time
-        self.datePicker.locale = Locale(identifier: "en_GB")
+        self.datePicker.isHidden = true
+        self.timePicker.isHidden = false
     }
     @objc func datePickerValueChange(_ datePicker: UIDatePicker) -> Void {
         let  chooseDate = datePicker.date
         let  dateFormater = DateFormatter.init()
         if self.dateButton.isSelected {
             dateFormater.dateFormat = "YYYY年MM月dd日"
+            let dateStr = dateFormater.string(from: chooseDate)
+            self.dateTimeStr = dateStr + self.dateTimeStr.suffix(6)
         }else {
             dateFormater.dateFormat = "HH:mm"
+            let timeStr = dateFormater.string(from: chooseDate)
+            self.dateTimeStr = self.dateTimeStr.prefix(11) + timeStr
         }
-        print(dateFormater.string(from: chooseDate))
+        self.delegate?.chooseDateAndTime(dateTime: self.dateTimeStr)
     }
     
     // 日期按钮
@@ -121,8 +148,17 @@ class LCEChooseDateView: UIView {
     lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker.init()
         datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: "zh_CN")
         datePicker.addTarget(self, action: #selector(datePickerValueChange(_:)), for: .valueChanged)
         return datePicker
+    }()
+    lazy var timePicker: UIDatePicker = {
+        let timePicker = UIDatePicker.init()
+        timePicker.datePickerMode = .time
+        timePicker.locale = Locale(identifier: "en_GB")
+        timePicker.addTarget(self, action: #selector(datePickerValueChange(_:)), for: .valueChanged)
+        timePicker.isHidden = true
+        return timePicker
     }()
     
 }

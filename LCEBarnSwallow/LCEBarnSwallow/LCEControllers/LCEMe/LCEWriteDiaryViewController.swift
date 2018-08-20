@@ -15,6 +15,10 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
         case .date:
             print("选择日期")
             let chooseDateVC = LCEChooseDateViewController()
+            chooseDateVC.dateTimeStr = functionBarView.dateTime
+            chooseDateVC.callBackBlock {(dateTime) in
+                self.functionBarView.dateTime = dateTime
+            }
             self.navigationController!.present(chooseDateVC, animated: true, completion: nil)
         case .icon:
             print("选择图标")
@@ -117,6 +121,10 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
     lazy var functionBarView : LCEWriteDiaryFunctionBarView = {
         let functionBarView = LCEWriteDiaryFunctionBarView.init(frame: CGRect(x: (lce_screen_width - 301) / 2, y: 64 + 20, width: 301, height: 75.4))
         functionBarView.delegate = self
+        let date = NSDate()
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "YYYY年MM月dd日 HH:mm"
+        functionBarView.dateTime = dateFormater.string(from: date as Date)
         return functionBarView
     }()
     // 编辑区域
