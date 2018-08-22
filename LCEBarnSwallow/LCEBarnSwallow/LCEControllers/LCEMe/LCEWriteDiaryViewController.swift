@@ -16,8 +16,9 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
             print("选择日期")
             let chooseDateVC = LCEChooseDateViewController()
             chooseDateVC.dateTimeStr = functionBarView.dateTime
-            chooseDateVC.callBackBlock {(dateTime) in
-                self.functionBarView.dateTime = dateTime
+            weak var weakSelf = self
+            chooseDateVC.callBackBlock { (dateTime) in
+                weakSelf?.functionBarView.dateTime = dateTime
             }
             self.navigationController!.present(chooseDateVC, animated: true, completion: nil)
         case .icon:
@@ -102,9 +103,7 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
     @objc override func leftBarButtonItemAction() -> Void {
         self.navigationController?.popViewController(animated: true)
     }
-    @objc func rightBarButtonItemAction() -> Void {
-        
-    }
+    @objc func rightBarButtonItemAction() -> Void {}
     @objc func closeKeyboard(sender: UIButton) -> Void {
         self.view.endEditing(true)
     }

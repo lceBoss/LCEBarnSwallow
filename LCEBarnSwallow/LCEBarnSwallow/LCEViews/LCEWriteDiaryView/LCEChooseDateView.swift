@@ -128,15 +128,15 @@ class LCEChooseDateView: UIView {
         let dateAndTimeBgView = UIView()
         dateAndTimeBgView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 62)
         let topLine = UIView()
-        topLine.backgroundColor = .red
-        topLine.frame = CGRect(x: 0, y: 0, width:self.frame.size.width, height:1)
+        topLine.backgroundColor = UIColor.colorWithAlphaHex(0xC9CACF, alpha: 1.0)
+        topLine.frame = CGRect(x: 0, y: 0, width:self.frame.size.width, height:0.5)
         let middleLine = UIView()
-        middleLine.backgroundColor = .red
-        middleLine.frame = CGRect(x: 0, y: 0, width: 1, height: dateAndTimeBgView.frame.size.height)
+        middleLine.backgroundColor = UIColor.colorWithAlphaHex(0xC9CACF, alpha: 1.0)
+        middleLine.frame = CGRect(x: 0, y: 0, width: 0.5, height: dateAndTimeBgView.frame.size.height)
         middleLine.center = dateAndTimeBgView.center
         let bottomLine = UIView()
-        bottomLine.backgroundColor = .red
-        bottomLine.frame = CGRect(x: 0, y: dateAndTimeBgView.frame.size.height - 1, width:self.frame.size.width, height:1)
+        bottomLine.backgroundColor = UIColor.colorWithAlphaHex(0xC9CACF, alpha: 1.0)
+        bottomLine.frame = CGRect(x: 0, y: dateAndTimeBgView.frame.size.height - 0.5, width:self.frame.size.width, height:0.5)
         dateAndTimeBgView.addSubview(topLine)
         dateAndTimeBgView.addSubview(middleLine)
         dateAndTimeBgView.addSubview(bottomLine)
