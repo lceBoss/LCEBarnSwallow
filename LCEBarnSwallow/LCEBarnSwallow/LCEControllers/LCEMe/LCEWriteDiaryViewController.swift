@@ -140,15 +140,10 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
         return closeKeyboardBtn
     }()
     // 底部功能栏
-    lazy var bottomView:UIView = {
-        let bottomView = UIView()
-        let bottomBgImageView = UIImageView()
-        bottomBgImageView.frame = CGRect(x: 0, y: 0, width: lce_screen_width, height: 50)
-        bottomBgImageView.image = UIImage.init(named: "diary_foot_bg")
-        bottomView.addSubview(bottomBgImageView)
+    lazy var bottomView: LCEWriteDiaryBottomView = {
+        let bottomView = LCEWriteDiaryBottomView.init()
         return bottomView
     }()
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

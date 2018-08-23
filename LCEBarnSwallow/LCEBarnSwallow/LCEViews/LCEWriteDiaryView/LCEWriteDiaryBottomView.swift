@@ -20,11 +20,29 @@ class LCEWriteDiaryBottomView: UIView {
     
     func setUpViews() -> Void {
         self.addSubview(self.bgImageView)
+        self.addSubview(self.skinButton)
+        self.addSubview(self.fontButton)
+        self.addSubview(self.labelButton)
     }
     
     override func updateConstraints() {
         self.bgImageView.snp.makeConstraints { (make) in
-            make.edges.equalTo(0)
+            make.left.top.right.bottom.equalTo(0)
+        }
+        self.skinButton.snp.makeConstraints { (make) in
+            make.left.equalTo(15)
+            make.centerY.equalTo(self.snp.centerY).offset(0)
+            make.size.equalTo(CGSize(width: 44, height: 44))
+        }
+        self.fontButton.snp.makeConstraints { (make) in
+            make.left.equalTo(self.skinButton.snp.right).offset(15)
+            make.centerY.equalTo(self.snp.centerY).offset(0)
+            make.size.equalTo(CGSize(width: 44, height: 44))
+        }
+        self.labelButton.snp.makeConstraints { (make) in
+            make.left.equalTo(self.fontButton.snp.right).offset(15)
+            make.centerY.equalTo(self.snp.centerY).offset(0)
+            make.size.equalTo(CGSize(width: 44, height: 44))
         }
         super.updateConstraints()
     }
@@ -36,8 +54,18 @@ class LCEWriteDiaryBottomView: UIView {
     }()
     lazy var skinButton: UIButton = {
         let skinButton = UIButton()
-        skinButton.setImage(UIImage.init(named: ""), for: <#T##UIControlState#>)
+        skinButton.setBackgroundImage(UIImage.init(named: "diary_font_button"), for: .normal)
         return skinButton
+    }()
+    lazy var fontButton: UIButton = {
+        let fontButton = UIButton()
+        fontButton.setBackgroundImage(UIImage.init(named: "diary_font_button"), for: .normal)
+        return fontButton
+    }()
+    lazy var labelButton: UIButton = {
+        let labelButton = UIButton()
+        labelButton.setBackgroundImage(UIImage.init(named: "diary_font_button"), for: .normal)
+        return labelButton
     }()
     
 }
