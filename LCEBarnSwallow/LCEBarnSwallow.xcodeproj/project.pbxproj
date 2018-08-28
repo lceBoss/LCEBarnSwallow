@@ -10,6 +10,7 @@
 		3468FEACDC7AB4213C993B14 /* Pods_LCEBarnSwallow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87995BAAEAAF8621B089AC31 /* Pods_LCEBarnSwallow.framework */; };
 		AACA9836786B547925C48B10 /* Pods_LCEBarnSwallowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1C6205D85E9C4A76D0A924 /* Pods_LCEBarnSwallowTests.framework */; };
 		C33E37F12134F937000C82BE /* LCESearchImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E37F02134F937000C82BE /* LCESearchImageModel.swift */; };
+		C33E37F321352300000C82BE /* LCETools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E37F221352300000C82BE /* LCETools.swift */; };
 		C352BF21212D362B006CE3B4 /* LCEWriteDiaryBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352BF20212D362B006CE3B4 /* LCEWriteDiaryBottomView.swift */; };
 		C352BF2721300D8F006CE3B4 /* LCEChooseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352BF2621300D8F006CE3B4 /* LCEChooseDateView.swift */; };
 		C352BF29213145D5006CE3B4 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C352BF28213145D5006CE3B4 /* Moya.framework */; };
@@ -75,6 +76,7 @@
 		A6416C02E976DB4AEA217D57 /* Pods_LCEBarnSwallowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCEBarnSwallowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02A9F52D4C38072A5318446 /* Pods-LCEBarnSwallow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCEBarnSwallow.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCEBarnSwallow/Pods-LCEBarnSwallow.release.xcconfig"; sourceTree = "<group>"; };
 		C33E37F02134F937000C82BE /* LCESearchImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCESearchImageModel.swift; sourceTree = "<group>"; };
+		C33E37F221352300000C82BE /* LCETools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCETools.swift; sourceTree = "<group>"; };
 		C352BF20212D362B006CE3B4 /* LCEWriteDiaryBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEWriteDiaryBottomView.swift; sourceTree = "<group>"; };
 		C352BF2621300D8F006CE3B4 /* LCEChooseDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseDateView.swift; sourceTree = "<group>"; };
 		C352BF28213145D5006CE3B4 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +278,7 @@
 			children = (
 				C3F513C120AD4DA7002F4940 /* LCEColorHex.swift */,
 				C3F513CF20AEAE43002F4940 /* LCEProgressHUD.swift */,
+				C33E37F221352300000C82BE /* LCETools.swift */,
 			);
 			path = LCEUtils;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				C3A9FB14210F1AA8004926BB /* LCEChoosePhotoViewController.swift in Sources */,
 				C3A9FB16210F1B20004926BB /* LCERecordViewController.swift in Sources */,
 				C3F513BD20AD2D9E002F4940 /* LCEBaseViewController.swift in Sources */,
+				C33E37F321352300000C82BE /* LCETools.swift in Sources */,
 				C3F513C220AD4DA7002F4940 /* LCEColorHex.swift in Sources */,
 				C352BF2721300D8F006CE3B4 /* LCEChooseDateView.swift in Sources */,
 				C3A9FB12210F1986004926BB /* LCEChooseIconViewController.swift in Sources */,

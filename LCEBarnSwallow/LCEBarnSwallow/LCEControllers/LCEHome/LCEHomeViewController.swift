@@ -10,10 +10,10 @@ import UIKit
 import SwiftyJSON
 import ObjectMapper
 
-class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITableViewDelegate {
+class LCEHomeViewController: LCEBaseViewController {
     
 //    var tableView: UITableView!
-    var dataArray: Array<LCESearchImageListModel> = []
+//    var dataArray: Array<LCESearchImageListModel> = []
     var keyword: String!
     var page: Int!
     
@@ -22,52 +22,64 @@ class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITab
         
         self.title = "首页"
         self.naviView.title = "首页"
-        self.view.addSubview(tableView)
         self.keyword = "朴信惠"
         self.page = 1
         
+        self.lceTableView?.frame = CGRect(x: 0, y: 64, width: LCEScreenWidth, height: LCEScreenHeight - 64 - 49)
+        view.addSubview(self.lceTableView!)
+        
+        // Network
+        requestSearchImages(keyword: self.keyword, page: self.page)
         weak var weakSelf = self
-        SearchImageProvider.request(.imageList(keyword: self.keyword, page: self.page)) {result in
+        addMJRefreshHeaderView { (page) in
+            weakSelf?.requestSearchImages(keyword:(weakSelf?.keyword)!, page:page!)
+        }
+        self.addMJRefreshFooterView { (page) in
+            weakSelf?.requestSearchImages(keyword: (weakSelf?.keyword)!, page: page!)
+        }
+        
+    }
+    
+    func requestSearchImages(keyword: String, page: Int) -> Void {
+        weak var weakSelf = self
+        SearchImageProvider.request(.imageList(keyword: keyword, page: page)) {result in
+            
             if case let .success(response) = result {
                 let data = try? response.mapString()
                 let dataModel: LCESearchImageModel = Mapper<LCESearchImageModel>().map(JSONString: data!)!
-                if self.page == 1 {
+                if page == 1 {
                     weakSelf?.dataArray.removeAll()
                 }
-                weakSelf?.dataArray += dataModel.data
+                weakSelf?.dataArray.append(contentsOf: dataModel.data)
                 DispatchQueue.main.async{
-                    weakSelf?.tableView.reloadData()
+                    weakSelf?.lceTableView?.reloadData()
                 }
+                weakSelf?.requsetResult(result: true, end: dataModel.data.count < 10)
+            } else {
+                LCEProgressHUD.sharedInstance.showInfoWithStatus(status: "请求失败")
+                weakSelf?.requsetResult(result: false, end: true)
             }
         }
-        
     }
     
     fileprivate func requestSearchImage(keyword: String, page: Int) -> Void {
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell.init()
-        let model: LCESearchImageListModel = self.dataArray[indexPath.row]
+        let model: LCESearchImageListModel = self.dataArray[indexPath.row] as! LCESearchImageListModel
         cell.textLabel?.text = model.title
         return cell
     }
-    
-    lazy var tableView: UITableView = {
-        var tableView = UITableView.init(frame: CGRect(x: 0, y: 64, width: self.view.frame.size.width, height: self.view.frame.size.height - 49 - 64))
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

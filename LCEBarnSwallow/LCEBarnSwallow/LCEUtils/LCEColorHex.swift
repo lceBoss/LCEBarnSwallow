@@ -8,9 +8,12 @@
 
 import UIKit
 
+public let lceBgColor = UIColor.colorWithHex(0xf2f2f2)
+public let lceLineColor = UIColor.colorWithHex(0xC9CACF)
+
 extension UIColor {
     
-    public class func colorWithHex(_ hexValue: Int) -> UIColor {
+    open class func colorWithHex(_ hexValue: Int) -> UIColor {
         return colorWithAlphaHex(hexValue, alpha: 1.0)
     }
     

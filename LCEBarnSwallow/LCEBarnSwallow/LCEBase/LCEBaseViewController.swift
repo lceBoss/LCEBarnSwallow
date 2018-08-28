@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import MJRefresh
 
-// 默认背景灰色
-let lceBgColor : UIColor = UIColor(red: 242 / 255.0, green: 242 / 255.0, blue: 242 / 255.0, alpha: 1.0)
 // 屏幕宽
 let lce_screen_width : CGFloat = UIScreen.main.applicationFrame.size.width
 // 屏幕高
 let lce_screen_height : CGFloat = UIScreen.main.applicationFrame.size.height
 
+/** 上拉加载结束回调*/
+public typealias LCEMJFooterLoadCompleteBlock = (Int?) -> Swift.Void
+/** 下拉加载结束回调*/
+public typealias LCEMJHeaderLoadCompleteBlock = (Int?) -> Swift.Void
+
+let LCETabViewFrame = CGRect(x: 0, y: 0, width: LCEScreenWidth, height: (LCEScreenHeight - LCENavHeight))
+
+fileprivate let tableViewTag: Int = 970425
+
 class LCEBaseViewController: UIViewController {
+    
+    // dataSource
+    var dataArray: [Any] = []
+    // page
+    var requestPage: Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = lceBgColor
@@ -50,6 +64,89 @@ class LCEBaseViewController: UIViewController {
     func addRightBarItem(target:UIViewController, imageName:String, sel:Selector) -> Void {
         naviView.addRightBarItem(target: target, imageName: imageName, sel: sel)
     }
+    
+    // MARK: - MJRefresh
+    func addMJRefreshFooterView(completeBlock: LCEMJFooterLoadCompleteBlock? = nil) {
+        weak var weakSelf = self
+        let tableView = currentTableView()
+        
+        tableView?.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+            weakSelf?.requestPage += 1
+            completeBlock?(weakSelf?.requestPage)
+        })
+    }
+    
+    
+    func addMJRefreshHeaderView(completeBlock: LCEMJHeaderLoadCompleteBlock? = nil) {
+        weak var weakSelf = self
+        let tableView = currentTableView()
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            if tableView?.mj_footer != nil {
+                tableView?.mj_footer.resetNoMoreData()
+            }
+            weakSelf?.requestPage = 1
+            completeBlock?(weakSelf?.requestPage)
+        })
+    }
+    
+    /// 上下拉结果处理
+    /// - Parameters:
+    ///   - result: 请求结果
+    ///   - end: 是否结束
+    func requsetResult(result: Bool, end: Bool) {
+        let tableView = currentTableView()
+        tableView?.mj_header.endRefreshing()
+        if (tableView?.mj_footer != nil) {
+            tableView?.mj_footer.endRefreshing()
+        }
+        if end {
+            if (tableView?.mj_footer != nil) {
+                tableView?.mj_footer.endRefreshingWithNoMoreData()
+            }
+            tableView?.reloadData()
+            return
+        }
+        if !result && (requestPage > 1) {
+            requestPage -= 1
+        }
+        else {
+            tableView!.reloadData()
+        }
+    }
+    
+    fileprivate func currentTableView() -> UITableView? {
+        let tableView: UITableView = view.viewWithTag(tableViewTag) as! UITableView
+        return tableView
+    }
+    
+    // plain tableView
+    lazy var lceTableView: UITableView? = {
+        let lceTableView = UITableView(frame: LCETabViewFrame, style: .plain)
+        lceTableView.delegate = self
+        lceTableView.dataSource = self
+        lceTableView.separatorStyle = .none
+        lceTableView.tag = tableViewTag
+        lceTableView.backgroundColor = lceBgColor
+        if #available(iOS 11.0, *) {
+            lceTableView.contentInsetAdjustmentBehavior = .never
+        }
+        return lceTableView
+    }()
+    
+    // group tableView
+    lazy var lceGroupTableView: UITableView? = {
+        let lceGroupTableView = UITableView(frame: LCETabViewFrame, style: .grouped)
+        lceGroupTableView.delegate = self
+        lceGroupTableView.dataSource = self
+        lceGroupTableView.separatorStyle = .none
+        lceGroupTableView.tag = tableViewTag
+        lceGroupTableView.backgroundColor = lceBgColor
+        if #available(iOS 11.0, *) {
+            lceGroupTableView.contentInsetAdjustmentBehavior = .never
+        }
+        return lceGroupTableView
+    }()
+
     // MARK: 懒加载
     lazy var naviView : LCENaviView = {
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 64)
@@ -72,4 +169,20 @@ class LCEBaseViewController: UIViewController {
     }
     */
 
+}
+
+extension LCEBaseViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell? = UITableViewCell()
+        return cell!
+    }
 }

@@ -22,6 +22,10 @@ class LCEProgressHUD: NSObject {
     
     override init() {
         super.init()
+        SVProgressHUD.setFont(UIFont.systemFont(ofSize: 17))
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+        SVProgressHUD.setMinimumDismissTimeInterval(2.0)
+        SVProgressHUD.setOffsetFromCenter(UIOffset(horizontal: 0, vertical: 0))
     }
     /*****   以下只列了部分常用功能方法，如若需要可自行添加   ****/
     // 纯菊花
