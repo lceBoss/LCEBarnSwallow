@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import LCEBarnSwallow
 
 class LCEBarnSwallowTests: XCTestCase {
@@ -22,8 +23,43 @@ class LCEBarnSwallowTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let xctest = self.expectation(description: "searchImageApi")
+//        SearchImageProvider.request(.imageList(keyword: "街拍", page: 1)) {result in
+//            if case let .success(response) = result {
+//                let data = try? response.mapJSON()
+////                let json = Json(data!)
+////                self.dataArray = json["data"].arrayValue
+//                print(data)
+//
+//            }
+//            xctest.fulfill()
+//
+//        }
+        SearchImageProvider.request(SearchImage.imageList(keyword: "街拍", page: 1)) { (result) in
+            print(result)
+        }
+        self.waitForExpectations(timeout: 10) { (error) in
+            print(error ?? "searchImageApi")
+        }
+        
+        
+//        let xctest = self.expectation(description: "searchImageApi")
+//        SearchImageProvider.request(SearchImage.imageList(keyword: "街拍", page: 1)) { (result) in
+//            do {
+//                let response = try result.dematerialize()
+//                let jsonStr = try response.mapString()
+//                print(jsonStr)
+//
+//            } catch {
+//                let printableError = error as CustomStringConvertible
+//                print(printableError.description)
+//            }
+//
+//            xctest.fulfill()
+//        }
+//        self.waitForExpectations(timeout: 10) { (error) in
+//            print(error ?? "searchImageApi")
+//        }
     }
     
     func testPerformanceExample() {

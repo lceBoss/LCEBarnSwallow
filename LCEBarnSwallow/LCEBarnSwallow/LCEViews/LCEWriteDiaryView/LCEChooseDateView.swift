@@ -69,7 +69,7 @@ class LCEChooseDateView: UIView {
             make.bottom.equalTo(-10)
         }
         
-        super .updateConstraints()
+        super.updateConstraints()
     }
     
     // MARK: 执⌇行⌇方⌇法⌇
@@ -146,14 +146,14 @@ class LCEChooseDateView: UIView {
     }()
     
     lazy var datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker.init()
+        let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.locale = Locale(identifier: "zh_CN")
         datePicker.addTarget(self, action: #selector(datePickerValueChange(_:)), for: .valueChanged)
         return datePicker
     }()
     lazy var timePicker: UIDatePicker = {
-        let timePicker = UIDatePicker.init()
+        let timePicker = UIDatePicker()
         timePicker.datePickerMode = .time
         timePicker.locale = Locale(identifier: "en_GB")
         timePicker.addTarget(self, action: #selector(datePickerValueChange(_:)), for: .valueChanged)
@@ -162,3 +162,4 @@ class LCEChooseDateView: UIView {
     }()
     
 }
+

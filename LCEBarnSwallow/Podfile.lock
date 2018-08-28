@@ -7,6 +7,7 @@ PODS:
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - ObjectMapper (3.3.0)
   - Result (3.2.4)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
@@ -17,7 +18,8 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - MJRefresh
   - Moya
-  - SnapKit (~> 4.0.0)
+  - ObjectMapper
+  - SnapKit
   - SVProgressHUD
   - SwiftyJSON
 
@@ -27,6 +29,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - MJRefresh
     - Moya
+    - ObjectMapper
     - Result
     - SnapKit
     - SVProgressHUD
@@ -37,11 +40,12 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: f5004f5860d9a8ed23a7ef7a156ae168828eb018
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 6cd779b1bfbed05fd77535713b40b5d50f118255
+PODFILE CHECKSUM: baa4f304c19904a3d40c4f1ed6145e604cad1de3
 
 COCOAPODS: 1.5.2

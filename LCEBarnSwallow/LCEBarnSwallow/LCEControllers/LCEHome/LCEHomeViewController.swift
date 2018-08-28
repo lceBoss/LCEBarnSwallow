@@ -8,12 +8,14 @@
 
 import UIKit
 import SwiftyJSON
+import ObjectMapper
 
 class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITableViewDelegate {
     
 //    var tableView: UITableView!
-    var dataArray:Array<JSON> = []
+    var dataArray: Array<LCESearchImageListModel> = []
     var keyword: String!
+    var page: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +23,20 @@ class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITab
         self.title = "首页"
         self.naviView.title = "首页"
         self.view.addSubview(tableView)
-        SearchImageProvider.request(.imageList(keyword: "街拍", page: 1)) {result in
+        self.keyword = "朴信惠"
+        self.page = 1
+        
+        weak var weakSelf = self
+        SearchImageProvider.request(.imageList(keyword: self.keyword, page: self.page)) {result in
             if case let .success(response) = result {
-                let data = try? response.mapJSON()
-                let json = JSON(data!)
-                self.dataArray = json["data"].arrayValue
+                let data = try? response.mapString()
+                let dataModel: LCESearchImageModel = Mapper<LCESearchImageModel>().map(JSONString: data!)!
+                if self.page == 1 {
+                    weakSelf?.dataArray.removeAll()
+                }
+                weakSelf?.dataArray += dataModel.data
                 DispatchQueue.main.async{
-                    self.tableView.reloadData()
+                    weakSelf?.tableView.reloadData()
                 }
             }
         }
@@ -48,13 +57,13 @@ class LCEHomeViewController: LCEBaseViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell.init()
-        let title: String = self.dataArray[indexPath.row]["title"].stringValue
-        cell.textLabel?.text = title
+        let model: LCESearchImageListModel = self.dataArray[indexPath.row]
+        cell.textLabel?.text = model.title
         return cell
     }
     
     lazy var tableView: UITableView = {
-        var tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 49))
+        var tableView = UITableView.init(frame: CGRect(x: 0, y: 64, width: self.view.frame.size.width, height: self.view.frame.size.height - 49 - 64))
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
