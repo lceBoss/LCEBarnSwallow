@@ -9,10 +9,10 @@
 import UIKit
 import MJRefresh
 
-// 屏幕宽
-let lce_screen_width : CGFloat = UIScreen.main.applicationFrame.size.width
-// 屏幕高
-let lce_screen_height : CGFloat = UIScreen.main.applicationFrame.size.height
+//// 屏幕宽
+//let lce_screen_width : CGFloat = UIScreen.main.applicationFrame.size.width
+//// 屏幕高
+//let lce_screen_height : CGFloat = UIScreen.main.applicationFrame.size.height
 
 /** 上拉加载结束回调*/
 public typealias LCEMJFooterLoadCompleteBlock = (Int?) -> Swift.Void
@@ -110,7 +110,7 @@ class LCEBaseViewController: UIViewController {
             requestPage -= 1
         }
         else {
-            tableView!.reloadData()
+            tableView?.reloadData()
         }
     }
     

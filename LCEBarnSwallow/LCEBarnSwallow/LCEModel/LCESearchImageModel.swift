@@ -54,4 +54,11 @@ class LCESearchImageListModel: Mappable {
         create_date <- map["create_date"]
     }
     
+    func searchImages() -> Array<Any> {
+        let searchImages: Array<Any>  = (image_urls?.components(separatedBy: ","))!
+        return searchImages
+    }
+    
+    
+    
 }

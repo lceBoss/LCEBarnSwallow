@@ -73,12 +73,12 @@ class LCENaviView: UIView {
         self.leftView.snp.makeConstraints { (make) in
             make.left.bottom.equalTo(0)
             make.top.equalTo(self.statusView.snp.bottom).offset(0)
-            make.width.equalTo(lce_screen_width * 1 / 4)
+            make.width.equalTo(LCEScreenWidth * 1 / 4)
         }
         self.rightView.snp.makeConstraints { (make) in
             make.right.bottom.equalTo(0)
             make.top.equalTo(self.statusView.snp.bottom).offset(0)
-            make.width.equalTo(lce_screen_width * 1 / 4)
+            make.width.equalTo(LCEScreenWidth * 1 / 4)
         }
         self.middleView.snp.makeConstraints { (make) in
             make.top.equalTo(self.statusView.snp.bottom).offset(0)

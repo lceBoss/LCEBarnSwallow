@@ -63,8 +63,8 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
         let keyboardHeight = keyboardFrame.size.height
         let animaDuration:TimeInterval = notiInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animaDuration, animations: {
-            self.functionBarView.frame = CGRect(x: (lce_screen_width - 301) / 2, y: -75.4 + 64, width: 301, height: 75.4)
-            self.closeKeyboardBtn.frame = CGRect(x: lce_screen_width - 45, y: lce_screen_height - keyboardHeight - 10, width: 45, height: 30)
+            self.functionBarView.frame = CGRect(x: (LCEScreenWidth - 301) / 2, y: -75.4 + 64, width: 301, height: 75.4)
+            self.closeKeyboardBtn.frame = CGRect(x: LCEScreenWidth - 45, y: LCEScreenHeight - keyboardHeight - 10, width: 45, height: 30)
         }) { (commplete) in
         }
     }
@@ -74,8 +74,8 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
         let notiInfo = notification.userInfo
         let animaDuration:TimeInterval = notiInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
         UIView.animate(withDuration: animaDuration, animations: {
-            self.functionBarView.frame = CGRect(x: (lce_screen_width - 301) / 2, y: 64 + 20, width: 301, height: 75.4)
-            self.closeKeyboardBtn.frame = CGRect(x: lce_screen_width - 45, y: lce_screen_height + 20, width: 45, height: 30)
+            self.functionBarView.frame = CGRect(x: (LCEScreenWidth - 301) / 2, y: 64 + 20, width: 301, height: 75.4)
+            self.closeKeyboardBtn.frame = CGRect(x: LCEScreenWidth - 45, y: LCEScreenHeight + 20, width: 45, height: 30)
         }) { (commplete) in
         }
         
@@ -118,7 +118,7 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
     }()
     // 功能栏
     lazy var functionBarView : LCEWriteDiaryFunctionBarView = {
-        let functionBarView = LCEWriteDiaryFunctionBarView.init(frame: CGRect(x: (lce_screen_width - 301) / 2, y: 64 + 20, width: 301, height: 75.4))
+        let functionBarView = LCEWriteDiaryFunctionBarView.init(frame: CGRect(x: (LCEScreenWidth - 301) / 2, y: 64 + 20, width: 301, height: 75.4))
         functionBarView.delegate = self
         let date = NSDate()
         let dateFormater = DateFormatter()
@@ -134,7 +134,7 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
     }()
     lazy var closeKeyboardBtn : UIButton = {
         let closeKeyboardBtn = UIButton()
-        closeKeyboardBtn.frame = CGRect(x: lce_screen_width - 45, y: lce_screen_height + 20, width: 45, height: 30)
+        closeKeyboardBtn.frame = CGRect(x: LCEScreenWidth - 45, y: LCEScreenHeight + 20, width: 45, height: 30)
         closeKeyboardBtn.setBackgroundImage(UIImage.init(named: "close_keyboard_button"), for: .normal)
         closeKeyboardBtn.addTarget(self, action: #selector(closeKeyboard(sender:)), for: .touchUpInside)
         return closeKeyboardBtn

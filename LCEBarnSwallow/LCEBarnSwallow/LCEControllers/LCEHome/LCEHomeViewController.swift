@@ -12,8 +12,6 @@ import ObjectMapper
 
 class LCEHomeViewController: LCEBaseViewController {
     
-//    var tableView: UITableView!
-//    var dataArray: Array<LCESearchImageListModel> = []
     var keyword: String!
     var page: Int!
     
@@ -22,7 +20,7 @@ class LCEHomeViewController: LCEBaseViewController {
         
         self.title = "首页"
         self.naviView.title = "首页"
-        self.keyword = "朴信惠"
+        self.keyword = "街拍"
         self.page = 1
         
         self.lceTableView?.frame = CGRect(x: 0, y: 64, width: LCEScreenWidth, height: LCEScreenHeight - 64 - 49)
@@ -45,25 +43,23 @@ class LCEHomeViewController: LCEBaseViewController {
         SearchImageProvider.request(.imageList(keyword: keyword, page: page)) {result in
             
             if case let .success(response) = result {
-                let data = try? response.mapString()
-                let dataModel: LCESearchImageModel = Mapper<LCESearchImageModel>().map(JSONString: data!)!
-                if page == 1 {
-                    weakSelf?.dataArray.removeAll()
+                if response.statusCode == 200 {
+                    let data = try? response.mapString()
+                    let dataModel: LCESearchImageModel = Mapper<LCESearchImageModel>().map(JSONString: data!)!
+                    if page == 1 {
+                        weakSelf?.dataArray.removeAll()
+                    }
+                    weakSelf?.dataArray.append(contentsOf: dataModel.data)
+                    weakSelf?.requsetResult(result: true, end: dataModel.data.count < 10)
+                }else {
+                    LCEProgressHUD.sharedInstance.showInfoWithStatus(status: "请求失败")
+                    weakSelf?.requsetResult(result: false, end: true)
                 }
-                weakSelf?.dataArray.append(contentsOf: dataModel.data)
-                DispatchQueue.main.async{
-                    weakSelf?.lceTableView?.reloadData()
-                }
-                weakSelf?.requsetResult(result: true, end: dataModel.data.count < 10)
             } else {
                 LCEProgressHUD.sharedInstance.showInfoWithStatus(status: "请求失败")
                 weakSelf?.requsetResult(result: false, end: true)
             }
         }
-    }
-    
-    fileprivate func requestSearchImage(keyword: String, page: Int) -> Void {
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,12 +71,30 @@ class LCEHomeViewController: LCEBaseViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell.init()
+        var cell: LCESearchImageTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "LCESearchImageTableViewCell") as? LCESearchImageTableViewCell
+        if cell == nil {
+            cell = Bundle.main.loadNibNamed("LCESearchImageTableViewCell", owner: self, options: nil)?.first as? LCESearchImageTableViewCell
+        }
+        cell!.imageCollectionView!.tag = indexPath.row
         let model: LCESearchImageListModel = self.dataArray[indexPath.row] as! LCESearchImageListModel
-        cell.textLabel?.text = model.title
-        return cell
+        cell?.imageModel = model
+        cell?.setupImageCollectionView()
+        return cell!
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let model: LCESearchImageListModel = self.dataArray[indexPath.row] as! LCESearchImageListModel
+        if (model.searchImages().count == 0) {
+            return 104;
+        }else {
+            return 180
+        }
+//        // 向上取整 分母图片个数需是浮点数
+//        let rowNums = ceilf(Float(Double((model.searchImages().count)) / 3.0))
+//        let itemHeight = (LCEScreenWidth - 24 - 2 * 5) / 3
+//        return itemHeight * CGFloat(rowNums) + (CGFloat(rowNums) - 1) * 5 + 104
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

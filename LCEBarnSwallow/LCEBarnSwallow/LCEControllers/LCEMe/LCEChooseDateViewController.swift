@@ -70,7 +70,7 @@ class LCEChooseDateViewController: LCEBaseViewController, LCEChooseDateViewDeleg
     }()
     // 选择日期和时间
     lazy var chooseDateView : LCEChooseDateView = {
-        let chooseDateView = LCEChooseDateView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 300, width: lce_screen_width, height: 300))
+        let chooseDateView = LCEChooseDateView.init(frame: CGRect(x: 0, y: self.view.frame.size.height - 300, width: LCEScreenWidth, height: 300))
         chooseDateView.delegate = self
         chooseDateView.dateTimeStr = dateTimeStr
         return chooseDateView
