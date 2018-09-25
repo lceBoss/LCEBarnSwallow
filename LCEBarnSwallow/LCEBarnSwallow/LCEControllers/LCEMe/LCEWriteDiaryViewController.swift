@@ -11,12 +11,12 @@ import UIKit
 class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionBarViewDelegate {
     
     func selectFunctionBar(type: functionBarType) {
+        weak var weakSelf = self
         switch type {
         case .date:
             print("选择日期")
             let chooseDateVC = LCEChooseDateViewController()
             chooseDateVC.dateTimeStr = functionBarView.dateTime
-            weak var weakSelf = self
             chooseDateVC.callBackBlock { (dateTime) in
                 weakSelf?.functionBarView.dateTime = dateTime
             }
@@ -24,6 +24,10 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
         case .icon:
             print("选择图标")
             let chooseIconVC = LCEChooseIconViewController()
+            chooseIconVC.chooseIconDict = functionBarView.iconDic
+            chooseIconVC.callBackBlock{ (iconDic) in
+                weakSelf?.functionBarView.iconDic = iconDic
+            }
             self.navigationController?.present(chooseIconVC, animated: true, completion: nil)
         case .photo:
             print("选择照片")
@@ -124,6 +128,7 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "YYYY年MM月dd日 HH:mm"
         functionBarView.dateTime = dateFormater.string(from: date as Date)
+        functionBarView.iconDic = ["weather": "0", "kind": "0", "paper": "9-0"]
         return functionBarView
     }()
     // 编辑区域

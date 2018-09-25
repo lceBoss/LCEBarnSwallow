@@ -27,6 +27,10 @@
 		C3A9FB12210F1986004926BB /* LCEChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB11210F1986004926BB /* LCEChooseIconViewController.swift */; };
 		C3A9FB14210F1AA8004926BB /* LCEChoosePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB13210F1AA8004926BB /* LCEChoosePhotoViewController.swift */; };
 		C3A9FB16210F1B20004926BB /* LCERecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB15210F1B20004926BB /* LCERecordViewController.swift */; };
+		C3BA17FB2141127C00782785 /* LCEIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BA17F92141127C00782785 /* LCEIconCollectionViewCell.swift */; };
+		C3BA17FC2141127C00782785 /* LCEIconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BA17FA2141127C00782785 /* LCEIconCollectionViewCell.xib */; };
+		C3CD17BC21410540000DBCAA /* LCEChooseIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD17BA21410540000DBCAA /* LCEChooseIconTableViewCell.swift */; };
+		C3CD17BD21410540000DBCAA /* LCEChooseIconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */; };
 		C3DDF45F20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */; };
 		C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5138A20AD24AE002F4940 /* AppDelegate.swift */; };
 		C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F5139120AD24B1002F4940 /* Assets.xcassets */; };
@@ -97,6 +101,10 @@
 		C3A9FB11210F1986004926BB /* LCEChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseIconViewController.swift; sourceTree = "<group>"; };
 		C3A9FB13210F1AA8004926BB /* LCEChoosePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChoosePhotoViewController.swift; sourceTree = "<group>"; };
 		C3A9FB15210F1B20004926BB /* LCERecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCERecordViewController.swift; sourceTree = "<group>"; };
+		C3BA17F92141127C00782785 /* LCEIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3BA17FA2141127C00782785 /* LCEIconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCEIconCollectionViewCell.xib; sourceTree = "<group>"; };
+		C3CD17BA21410540000DBCAA /* LCEChooseIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseIconTableViewCell.swift; sourceTree = "<group>"; };
+		C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCEChooseIconTableViewCell.xib; sourceTree = "<group>"; };
 		C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEWriteDiaryFunctionBarView.swift; sourceTree = "<group>"; };
 		C3F5138720AD24AE002F4940 /* LCEBarnSwallow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCEBarnSwallow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F5138A20AD24AE002F4940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +220,10 @@
 				C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */,
 				C352BF2621300D8F006CE3B4 /* LCEChooseDateView.swift */,
 				C352BF20212D362B006CE3B4 /* LCEWriteDiaryBottomView.swift */,
+				C3CD17BA21410540000DBCAA /* LCEChooseIconTableViewCell.swift */,
+				C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */,
+				C3BA17F92141127C00782785 /* LCEIconCollectionViewCell.swift */,
+				C3BA17FA2141127C00782785 /* LCEIconCollectionViewCell.xib */,
 			);
 			path = LCEWriteDiaryView;
 			sourceTree = "<group>";
@@ -449,6 +461,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3BA17FC2141127C00782785 /* LCEIconCollectionViewCell.xib in Resources */,
+				C3CD17BD21410540000DBCAA /* LCEChooseIconTableViewCell.xib in Resources */,
 				C33E37F821355BCA000C82BE /* LCESearchImageTableViewCell.xib in Resources */,
 				C3769042213676E500069005 /* LCEImageCollectionViewCell.xib in Resources */,
 				C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */,
@@ -564,6 +578,7 @@
 				C3F513BF20AD2DEB002F4940 /* LCEHomeViewController.swift in Sources */,
 				C33E37F12134F937000C82BE /* LCESearchImageModel.swift in Sources */,
 				C3A9FB14210F1AA8004926BB /* LCEChoosePhotoViewController.swift in Sources */,
+				C3CD17BC21410540000DBCAA /* LCEChooseIconTableViewCell.swift in Sources */,
 				C3A9FB16210F1B20004926BB /* LCERecordViewController.swift in Sources */,
 				C3F513BD20AD2D9E002F4940 /* LCEBaseViewController.swift in Sources */,
 				C33E37F321352300000C82BE /* LCETools.swift in Sources */,
@@ -572,6 +587,7 @@
 				C352BF2721300D8F006CE3B4 /* LCEChooseDateView.swift in Sources */,
 				C3A9FB12210F1986004926BB /* LCEChooseIconViewController.swift in Sources */,
 				C39950CE20F9D30C00BC0BDB /* LCENaviView.swift in Sources */,
+				C3BA17FB2141127C00782785 /* LCEIconCollectionViewCell.swift in Sources */,
 				C3DDF45F20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

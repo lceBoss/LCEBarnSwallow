@@ -8,8 +8,12 @@
 
 import UIKit
 
+// 默认背景
 public let lceBgColor = UIColor.colorWithHex(0xf2f2f2)
+// 分割线
 public let lceLineColor = UIColor.colorWithHex(0xC9CACF)
+// 淡黑色字体
+public let lceTextColor = UIColor.colorWithHex(0x333333)
 
 extension UIColor {
     

@@ -25,7 +25,7 @@ class LCEWriteDiaryFunctionBarView: UIView {
     var delegate: LCEWriteDiaryFunctionBarViewDelegate?
     
     open var dateTime: String! {
-        didSet{
+        didSet {
             let index5 = dateTime.index(dateTime.startIndex, offsetBy: 5)
             let index8 = dateTime.index(dateTime.startIndex, offsetBy: 8)
             let index10 = dateTime.index(dateTime.startIndex, offsetBy: 10)
@@ -40,6 +40,24 @@ class LCEWriteDiaryFunctionBarView: UIView {
             self.weekAndMomentLabel.text = week + " " + time
         }
     }
+    
+    open var iconDic: Dictionary<String, String>! {
+        didSet {
+            let weatherIndex: Int = Int(iconDic["weather"]!)!
+            let kindIndex: Int = Int(iconDic["kind"]!)!
+            let paperArr = ["one", "two", "three", "four", "five", "six", "women_face", "man_face"]
+            let paperValue: String = iconDic["paper"]!
+            let index = paperValue.index(of: "-")
+            let paperSection: Int = Int(paperValue.prefix(upTo: index!))!
+            let paperIndex: Int = Int(paperValue.suffix(from: index!))!
+            self.weatherImageView.image = UIImage.init(named: "look_weather\(weatherIndex + 1)")
+            self.moodImageView.image = UIImage.init(named: "diary_face\(kindIndex + 1)")
+            if paperSection < 9 {
+                self.iconImageView.image = UIImage.init(named: "\(paperArr[paperSection])\(-paperIndex + 1)")
+            }
+        }
+    }
+    
     // 获取星期根据日期
     func getWeekDay(dateStr:String) ->String {
         let dateArr = dateStr.components(separatedBy:"-")
@@ -136,8 +154,8 @@ class LCEWriteDiaryFunctionBarView: UIView {
             make.size.equalTo(CGSize(width: 36, height: 36))
         }
         self.iconImageView.snp.makeConstraints { (make) in
-            make.right.bottom.equalTo(0)
-            make.size.equalTo(CGSize(width: 36, height: 36))
+            make.right.bottom.equalTo(-1.5)
+            make.size.equalTo(CGSize(width: 34, height: 34))
         }
         self.photoView.snp.makeConstraints { (make) in
             make.top.equalTo(1)
@@ -232,17 +250,14 @@ class LCEWriteDiaryFunctionBarView: UIView {
     }()
     lazy var weatherImageView : UIImageView = {
         let weatherImageView = UIImageView()
-        weatherImageView.image = UIImage.init(named: "look_weather1")
         return weatherImageView
     }()
     lazy var moodImageView : UIImageView = {
         let moodImageView = UIImageView()
-        moodImageView.image = UIImage.init(named: "diary_face1")
         return moodImageView
     }()
     lazy var iconImageView : UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.image = UIImage.init(named: "five7")
         return iconImageView
     }()
     // 照片
