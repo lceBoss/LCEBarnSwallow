@@ -32,6 +32,8 @@
 		C3CD17BC21410540000DBCAA /* LCEChooseIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD17BA21410540000DBCAA /* LCEChooseIconTableViewCell.swift */; };
 		C3CD17BD21410540000DBCAA /* LCEChooseIconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */; };
 		C3DDF45F20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */; };
+		C3F1F70A215F169A00D4DD37 /* LCEPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1F708215F169A00D4DD37 /* LCEPhotoCollectionViewCell.swift */; };
+		C3F1F70B215F169A00D4DD37 /* LCEPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F1F709215F169A00D4DD37 /* LCEPhotoCollectionViewCell.xib */; };
 		C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5138A20AD24AE002F4940 /* AppDelegate.swift */; };
 		C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F5139120AD24B1002F4940 /* Assets.xcassets */; };
 		C3F513A020AD24B1002F4940 /* LCEBarnSwallowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5139F20AD24B1002F4940 /* LCEBarnSwallowTests.swift */; };
@@ -92,6 +94,7 @@
 		C352BF28213145D5006CE3B4 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C376903F213676E500069005 /* LCEImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3769040213676E500069005 /* LCEImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCEImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		C3894FAB21609FCF001BAEB7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C38F7A3520B2ADB60089DD0D /* LCESearchImageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCESearchImageApi.swift; sourceTree = "<group>"; };
 		C39950CA20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEWriteDiaryViewController.swift; sourceTree = "<group>"; };
 		C39950CD20F9D30C00BC0BDB /* LCENaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCENaviView.swift; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 		C3CD17BA21410540000DBCAA /* LCEChooseIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseIconTableViewCell.swift; sourceTree = "<group>"; };
 		C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCEChooseIconTableViewCell.xib; sourceTree = "<group>"; };
 		C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEWriteDiaryFunctionBarView.swift; sourceTree = "<group>"; };
+		C3F1F708215F169A00D4DD37 /* LCEPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C3F1F709215F169A00D4DD37 /* LCEPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCEPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		C3F5138720AD24AE002F4940 /* LCEBarnSwallow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCEBarnSwallow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F5138A20AD24AE002F4940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F5139120AD24B1002F4940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 		6179B03F948D2C3729D56596 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3894FAB21609FCF001BAEB7 /* XCTest.framework */,
 				C39E54202133E53500D84671 /* ObjectMapper.framework */,
 				C352BF28213145D5006CE3B4 /* Moya.framework */,
 				C39950CF20F9E43300BC0BDB /* SnapKit.framework */,
@@ -224,6 +230,8 @@
 				C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */,
 				C3BA17F92141127C00782785 /* LCEIconCollectionViewCell.swift */,
 				C3BA17FA2141127C00782785 /* LCEIconCollectionViewCell.xib */,
+				C3F1F708215F169A00D4DD37 /* LCEPhotoCollectionViewCell.swift */,
+				C3F1F709215F169A00D4DD37 /* LCEPhotoCollectionViewCell.xib */,
 			);
 			path = LCEWriteDiaryView;
 			sourceTree = "<group>";
@@ -465,6 +473,7 @@
 				C3CD17BD21410540000DBCAA /* LCEChooseIconTableViewCell.xib in Resources */,
 				C33E37F821355BCA000C82BE /* LCESearchImageTableViewCell.xib in Resources */,
 				C3769042213676E500069005 /* LCEImageCollectionViewCell.xib in Resources */,
+				C3F1F70B215F169A00D4DD37 /* LCEPhotoCollectionViewCell.xib in Resources */,
 				C3F5139220AD24B1002F4940 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +545,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -549,6 +559,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -572,6 +583,7 @@
 				C39950CB20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift in Sources */,
 				C352BF21212D362B006CE3B4 /* LCEWriteDiaryBottomView.swift in Sources */,
 				C3F513BA20AD2D42002F4940 /* LCETabBarController.swift in Sources */,
+				C3F1F70A215F169A00D4DD37 /* LCEPhotoCollectionViewCell.swift in Sources */,
 				C3A9FB10210F16DF004926BB /* LCEChooseDateViewController.swift in Sources */,
 				C3F513C620AD523A002F4940 /* LCEMeViewController.swift in Sources */,
 				C3F5138B20AD24AE002F4940 /* AppDelegate.swift in Sources */,
@@ -744,6 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ECZYDYW676;
 				INFOPLIST_FILE = LCEBarnSwallow/Info.plist;
@@ -752,8 +765,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yaohuxiaozi.barnswallow.LCEBarnSwallow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaohuxiaozi.barnswallow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -765,6 +779,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ECZYDYW676;
 				INFOPLIST_FILE = LCEBarnSwallow/Info.plist;
@@ -773,8 +788,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yaohuxiaozi.barnswallow.LCEBarnSwallow;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaohuxiaozi.barnswallow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

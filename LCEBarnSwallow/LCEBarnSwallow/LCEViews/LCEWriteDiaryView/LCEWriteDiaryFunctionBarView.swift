@@ -57,6 +57,20 @@ class LCEWriteDiaryFunctionBarView: UIView {
             }
         }
     }
+    open var imagesArr: Array<Any>! {
+        didSet {
+            if imagesArr.count > 0 {
+                self.photoButton.isSelected = true
+                self.photoImageView.image = imagesArr[0] as? UIImage
+                self.photoNumLabel.isHidden = false
+                self.photoNumLabel.text = "\(imagesArr.count)"
+            }else {
+                self.photoButton.isSelected = false
+                self.photoNumLabel.isHidden = true
+                self.photoImageView.image = nil
+            }
+        }
+    }
     
     // 获取星期根据日期
     func getWeekDay(dateStr:String) ->String {
@@ -165,6 +179,15 @@ class LCEWriteDiaryFunctionBarView: UIView {
         self.photoButton.snp.makeConstraints { (make) in
             make.edges.equalTo(0)
         }
+        self.photoImageView.snp.makeConstraints { (make) in
+            make.top.left.equalTo(3)
+            make.bottom.right.equalTo(-3)
+        }
+        self.photoNumLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(5)
+            make.right.equalTo(-4)
+            make.size.equalTo(CGSize(width: 19, height: 19))
+        }
         self.recordView.snp.makeConstraints { (make) in
             make.top.equalTo(1)
             make.left.equalTo(self.photoView.snp.right).offset(1)
@@ -264,6 +287,8 @@ class LCEWriteDiaryFunctionBarView: UIView {
     lazy var photoView : UIView = {
         let photoView = UIView()
         photoView.addSubview(self.photoButton)
+        photoView.addSubview(self.photoImageView)
+        photoView.addSubview(self.photoNumLabel)
         return photoView
     }()
     lazy var photoButton : UIButton = {
@@ -272,6 +297,23 @@ class LCEWriteDiaryFunctionBarView: UIView {
         photoButton.setBackgroundImage(UIImage.init(named: "diary_photo_bg_red"), for: .selected)
         photoButton.addTarget(self, action: #selector(selectPhoto(sender:)), for: .touchUpInside)
         return photoButton
+    }()
+    lazy var photoImageView: UIImageView = {
+        let photoImageView = UIImageView.init()
+        photoImageView.layer.cornerRadius = 4
+        photoImageView.clipsToBounds = true
+        return photoImageView
+    }()
+    lazy var photoNumLabel: UILabel = {
+        let photoNumLabel = UILabel.init()
+        photoNumLabel.layer.cornerRadius = 9.5
+        photoNumLabel.clipsToBounds = true
+        photoNumLabel.backgroundColor = .red
+        photoNumLabel.font = UIFont.systemFont(ofSize: 15)
+        photoNumLabel.textAlignment = .center
+        photoNumLabel.textColor = .white
+        photoNumLabel.isHidden = true
+        return photoNumLabel
     }()
     // 录音
     lazy var recordView : UIView = {

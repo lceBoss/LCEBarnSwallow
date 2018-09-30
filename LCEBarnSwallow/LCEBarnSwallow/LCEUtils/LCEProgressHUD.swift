@@ -22,6 +22,7 @@ class LCEProgressHUD: NSObject {
     
     override init() {
         super.init()
+        SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.setFont(UIFont.systemFont(ofSize: 17))
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
         SVProgressHUD.setMinimumDismissTimeInterval(2.0)

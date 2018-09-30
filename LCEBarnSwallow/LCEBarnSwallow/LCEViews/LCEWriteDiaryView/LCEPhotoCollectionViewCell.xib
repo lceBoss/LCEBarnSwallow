@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LCEPhotoCollectionViewCell" customModule="LCEBarnSwallow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place_image1" translatesAutoresizingMaskIntoConstraints="NO" id="Ka7-gW-87i">
+                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMB-yx-gBI">
+                        <rect key="frame" x="55" y="0.0" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="nKa-A6-cd0"/>
+                            <constraint firstAttribute="height" constant="25" id="upb-Vj-dmX"/>
+                        </constraints>
+                        <state key="normal" image="btn_photo_delete"/>
+                        <connections>
+                            <action selector="touchDeleteButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="grX-x3-TG1"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="OMB-yx-gBI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2FP-MK-5VF"/>
+                <constraint firstAttribute="bottom" secondItem="Ka7-gW-87i" secondAttribute="bottom" constant="8" id="O2J-KS-t7T"/>
+                <constraint firstAttribute="trailing" secondItem="OMB-yx-gBI" secondAttribute="trailing" id="U9D-Zv-QTL"/>
+                <constraint firstItem="Ka7-gW-87i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="cT5-iz-soY"/>
+                <constraint firstAttribute="trailing" secondItem="Ka7-gW-87i" secondAttribute="trailing" constant="8" id="gkm-hC-XUf"/>
+                <constraint firstItem="Ka7-gW-87i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="zQJ-Y5-XdG"/>
+            </constraints>
+            <size key="customSize" width="80" height="80"/>
+            <connections>
+                <outlet property="deleteButton" destination="OMB-yx-gBI" id="YnE-Kr-a0j"/>
+                <outlet property="photoImageView" destination="Ka7-gW-87i" id="fAo-x8-Arp"/>
+            </connections>
+            <point key="canvasLocation" x="-35" y="95"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="btn_photo_delete" width="32" height="32"/>
+        <image name="place_image1" width="170" height="170"/>
+    </resources>
+</document>

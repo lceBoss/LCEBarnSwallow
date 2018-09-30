@@ -32,8 +32,13 @@ class LCEWriteDiaryViewController: LCEBaseViewController, LCEWriteDiaryFunctionB
         case .photo:
             print("选择照片")
             let choosePhotoVC = LCEChoosePhotoViewController()
+            if ((functionBarView.imagesArr) != nil) {
+                choosePhotoVC.dataArray = functionBarView.imagesArr
+            }
+            choosePhotoVC.callBackBlock { (images) in
+                weakSelf?.functionBarView.imagesArr = images
+            }
             self.navigationController?.present(choosePhotoVC, animated: true, completion: nil)
-//            self.functionBarView.photoButton.isSelected = !self.functionBarView.photoButton.isSelected
         case .record:
             print("选择录音")
             let recordVC = LCERecordViewController()
