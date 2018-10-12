@@ -29,6 +29,8 @@
 		C3A9FB16210F1B20004926BB /* LCERecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9FB15210F1B20004926BB /* LCERecordViewController.swift */; };
 		C3BA17FB2141127C00782785 /* LCEIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BA17F92141127C00782785 /* LCEIconCollectionViewCell.swift */; };
 		C3BA17FC2141127C00782785 /* LCEIconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BA17FA2141127C00782785 /* LCEIconCollectionViewCell.xib */; };
+		C3C6FAD7216C77E700FE41BF /* LCERecordProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C6FAD6216C77E700FE41BF /* LCERecordProgressView.swift */; };
+		C3CC3881216B457C00D11BA0 /* LCERecordFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC3880216B457C00D11BA0 /* LCERecordFileView.swift */; };
 		C3CD17BC21410540000DBCAA /* LCEChooseIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD17BA21410540000DBCAA /* LCEChooseIconTableViewCell.swift */; };
 		C3CD17BD21410540000DBCAA /* LCEChooseIconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */; };
 		C3DDF45F20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */; };
@@ -106,6 +108,8 @@
 		C3A9FB15210F1B20004926BB /* LCERecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCERecordViewController.swift; sourceTree = "<group>"; };
 		C3BA17F92141127C00782785 /* LCEIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3BA17FA2141127C00782785 /* LCEIconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCEIconCollectionViewCell.xib; sourceTree = "<group>"; };
+		C3C6FAD6216C77E700FE41BF /* LCERecordProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCERecordProgressView.swift; sourceTree = "<group>"; };
+		C3CC3880216B457C00D11BA0 /* LCERecordFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCERecordFileView.swift; sourceTree = "<group>"; };
 		C3CD17BA21410540000DBCAA /* LCEChooseIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEChooseIconTableViewCell.swift; sourceTree = "<group>"; };
 		C3CD17BB21410540000DBCAA /* LCEChooseIconTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCEChooseIconTableViewCell.xib; sourceTree = "<group>"; };
 		C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEWriteDiaryFunctionBarView.swift; sourceTree = "<group>"; };
@@ -220,9 +224,19 @@
 			path = LCENaviView;
 			sourceTree = "<group>";
 		};
+		C3CC387F216B450A00D11BA0 /* LCERecordView */ = {
+			isa = PBXGroup;
+			children = (
+				C3CC3880216B457C00D11BA0 /* LCERecordFileView.swift */,
+				C3C6FAD6216C77E700FE41BF /* LCERecordProgressView.swift */,
+			);
+			path = LCERecordView;
+			sourceTree = "<group>";
+		};
 		C3DDF45D20FDF5C300680530 /* LCEWriteDiaryView */ = {
 			isa = PBXGroup;
 			children = (
+				C3CC387F216B450A00D11BA0 /* LCERecordView */,
 				C3DDF45E20FDF62A00680530 /* LCEWriteDiaryFunctionBarView.swift */,
 				C352BF2621300D8F006CE3B4 /* LCEChooseDateView.swift */,
 				C352BF20212D362B006CE3B4 /* LCEWriteDiaryBottomView.swift */,
@@ -577,7 +591,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F513CC20AD71E8002F4940 /* LCENavigationController.swift in Sources */,
+				C3C6FAD7216C77E700FE41BF /* LCERecordProgressView.swift in Sources */,
 				C3F513D020AEAE44002F4940 /* LCEProgressHUD.swift in Sources */,
+				C3CC3881216B457C00D11BA0 /* LCERecordFileView.swift in Sources */,
 				C3769041213676E500069005 /* LCEImageCollectionViewCell.swift in Sources */,
 				C38F7A3620B2ADB60089DD0D /* LCESearchImageApi.swift in Sources */,
 				C39950CB20F9C4FB00BC0BDB /* LCEWriteDiaryViewController.swift in Sources */,
